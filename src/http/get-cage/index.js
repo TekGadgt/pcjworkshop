@@ -1,6 +1,7 @@
 // learn more about HTTP functions here: https://arc.codes/primitives/http
 exports.handler = async function http(req) {
   let dimensions = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000]
+  let sites = ['https://www.placecage.com/gif/', 'https://www.stevensegallery.com/', 'https://www.fillmurray.com/']
   return {
     headers: {
       'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0',
@@ -51,11 +52,11 @@ exports.handler = async function http(req) {
     <div class="margin-left-8">
       <div class="margin-bottom-16">
         <h1 class="margin-bottom-16">
-          PraiseCage
+          Celeb Fillers
         </h1>
-        <image src="https://www.placecage.com/gif/${dimensions[Math.floor(Math.random() * dimensions.length)]}/${
+        <image src="${sites[Math.floor(Math.random() * sites.length)]}${
       dimensions[Math.floor(Math.random() * dimensions.length)]
-    }"></image>
+    }/${dimensions[Math.floor(Math.random() * dimensions.length)]}"></image>
       </div>
       <div>
         <p class="margin-bottom-8">
